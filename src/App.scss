@@ -100,6 +100,8 @@
     overflow: scroll;
     max-width: rem(600);
     width: calc(100% - 100px);
+    top: rem(30);
+    right: rem(30);
 
     h2 {
       text-align: center;
