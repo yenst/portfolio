@@ -1,0 +1,152 @@
+@import 'themes/globals.modules';
+
+.App {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .social__social-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: rem(15);
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: var(--font-color-light);
+
+      .social__label {
+        margin-left: rem(5);
+        position: relative;
+
+        &:after {
+          content: '';
+          background: var(--font-color-light);
+          height: rem(2);
+          width: 0;
+          transition: width 0.7s ease;
+          position: absolute;
+          left: 0;
+          bottom: rem(-10);
+        }
+
+        &:hover {
+          &:after {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    svg {
+      padding: rem(8) rem(5);
+      color: var(--font-color-light);
+      width: rem(24);
+      height: rem(24);
+    }
+
+
+  }
+
+  .portrait__wrapper.window__wrapper {
+    right: rem(30);
+    bottom: rem(30);
+    transform: none;
+  }
+
+  .portrait__image-wrapper {
+    width: rem(200);
+    position: relative;
+
+    img {
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+  }
+
+  .portrait__social-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+
+    svg {
+      padding: rem(8) rem(5);
+      color: var(--font-color-light);
+      width: rem(24);
+      height: rem(24);
+    }
+  }
+
+  .projects__content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+  }
+
+  .projects__wrapper {
+    max-height: rem(400);
+    overflow: scroll;
+    max-width: rem(600);
+    width: calc(100% - 100px);
+
+    h2 {
+      text-align: center;
+    }
+
+    .projects__wrapper-content {
+      padding: rem(0) rem(20) rem(20);
+
+    }
+
+  }
+}
+
+.dark-mode {
+  .App {
+
+    .social__social-wrapper {
+
+      a {
+
+        color: var(--font-color-dark);
+
+        .social__label {
+
+
+          &:after {
+            background: var(--font-color-dark);
+
+          }
+
+        }
+      }
+
+      svg {
+        color: var(--font-color-dark);
+      }
+
+
+    }
+
+    .portrait__social-wrapper {
+      svg {
+        color: var(--font-color-dark);
+      }
+    }
+
+
+  }
+
+}

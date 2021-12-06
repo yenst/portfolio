@@ -1,0 +1,22 @@
+
+:root {
+  --second-color-light: #424242;
+  --primary-color-light: #FAFAFA;
+  --terminal-color-light: #cecece;
+  --font-color-light: black;
+  --second-color-dark: #032833;
+  --primary-color-dark: #131519;
+  --terminal-color-dark: #202121;
+  --font-color-dark: white;
+  --control-default-bg-color: #424242;
+  --control-close-bg-color: #fc5b57;
+  --control-minimize-bg-color: #e5bf3c;
+  --control-maximize-bg-color: #57c038;
+
+}
+
+// Functions
+@function rem($value) {
+  $remValue: ($value/16) + rem;
+  @return $remValue;
+}
