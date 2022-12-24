@@ -7,11 +7,12 @@ import {useEffect, useRef, useState} from "react"
 import Window from "./components/Window/Window"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {library} from '@fortawesome/fontawesome-svg-core'
+import {faEnvelope} from "@fortawesome/free-solid-svg-icons"
 import {faLinkedin, faGithub, faGitlab, faInstagram, faSpotify} from "@fortawesome/free-brands-svg-icons"
 import Project from "./components/Project/Project"
 
 
-library.add(faGithub, faLinkedin, faGitlab, faInstagram, faSpotify);
+library.add(faGithub, faLinkedin, faGitlab, faInstagram, faSpotify, faEnvelope);
 
 
 function App() {
@@ -62,7 +63,7 @@ function App() {
             setDarkmode(!darkmode)
             return `Darkmode ${darkmode ? 'disabled' : 'enabled'}`
         },
-        whoami: `Hey, my name is Jens Thiel. I'm a Web Developer with a passion for Javascript.`,
+        whoami: `Hey, my name is Jens Thiel. I'm a Freelance Web Developer with a passion for Javascript.`,
         profile: () => {
             portraitRef.current?.toggle()
         },
@@ -84,9 +85,12 @@ function App() {
                 <Window hidden={false} ref={portraitRef} className="portrait" content={
                     <div className="portrait__content">
                         <div className="portrait__image-wrapper">
-                            <img src="jens.jpeg" alt="jens"/>
+                            <img src="jens.jpg" alt="jens"/>
                         </div>
                         <div className="portrait__social-wrapper">
+                            <a href="mailto:contact@yens.io" target="_blank" rel="noreferrer">
+                                <FontAwesomeIcon icon='envelope'/>
+                            </a>
                             <a href="https://www.linkedin.com/in/yens" target="_blank" rel="noreferrer">
                                 <FontAwesomeIcon icon={['fab', 'linkedin']}/>
                             </a>
@@ -127,6 +131,29 @@ function App() {
                     <div className="projects__wrapper-content">
                         <h2>Projects</h2>
                         <div className="projects__content">
+                            <Project title="Officient" image="projects/officient.png" description={
+                                <div>
+                                    <div>Freelance work on the webapp</div>
+                                    <ul>
+                                        <li>Vue.js</li>
+                                        <li>PHP</li>
+                                        <li>Node.js</li>
+                                    </ul>
+                                </div>
+                            }
+                                     link="https://app.officient.io"/>
+                            <Project title="Kinepolis" image="projects/kinepolis.png" description={
+                                <div>
+                                    <div>Freelance work on the site</div>
+                                    <ul>
+                                        <li>Frontend ticketing client in custom JS</li>
+                                        <li>General Drupal 7 work</li>
+                                        <li>Tech leading in Drupal / JS</li>
+                                        <li>Implementing identity server across all countries</li>
+                                    </ul>
+                                </div>
+                            }
+                                     link="https://kinepolis.be/nl"/>
                             <Project title="Tennisclub Duinbergen" image="projects/tcd.png" description={
                                 <div>
                                     <div>Wordpress project with custom design</div>
